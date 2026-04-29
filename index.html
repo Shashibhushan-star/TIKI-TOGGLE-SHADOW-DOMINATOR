@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiki Topple</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="start-screen" class="screen active">
+        <h1 class="neon-text">TIKI TOPPLE</h1>
+        <div class="menu-container">
+            <div class="input-group">
+                <label for="player-count">Number of Players:</label>
+                <select id="player-count">
+                    <option value="2">2 Players</option>
+                    <option value="3" selected>3 Players</option>
+                    <option value="4">4 Players</option>
+                </select>
+            </div>
+            <button id="start-btn" class="neon-btn">Start Game</button>
+            <div class="instructions">
+                <h2>How to Play</h2>
+                <p>Objective: Be the first to bring your Tiki to position 1.</p>
+                <p>On your turn, choose an action:</p>
+                <ul>
+                    <li><strong>Move:</strong> Go forward 1 or 2 spaces.</li>
+                    <li><strong>Topple:</strong> Push all tikis ahead of you back 1 space, and jump to the front.</li>
+                    <li><strong>Switch:</strong> Swap positions with another player.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-screen" class="screen">
+        <div class="game-header">
+            <h2 id="turn-indicator" class="neon-text">Player 1's Turn</h2>
+            <button id="exit-btn" class="outline-btn">Exit to Menu</button>
+        </div>
+        
+        <div class="board-container">
+            <div id="board" class="board">
+                <div class="track-background" id="track-bg"></div>
+                <div class="tikis-layer" id="tikis-layer"></div>
+            </div>
+            
+            <div class="controls-container">
+                <div class="actions-box">
+                    <h3>Actions</h3>
+                    <div class="action-buttons">
+                        <button class="action-btn" id="btn-move-1">Move 1</button>
+                        <button class="action-btn" id="btn-move-2">Move 2</button>
+                        <button class="action-btn" id="btn-topple">Topple</button>
+                        <button class="action-btn" id="btn-switch">Switch</button>
+                    </div>
+                </div>
+                <div id="action-feedback" class="feedback-text">Game started!</div>
+                
+                <div id="switch-panel" class="hidden switch-panel">
+                    <h3>Select Player to Switch With</h3>
+                    <div id="switch-targets" class="switch-targets"></div>
+                    <button id="btn-cancel-switch" class="outline-btn small mt-4">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="win-screen" class="screen">
+        <h1 id="winner-text" class="neon-text winner-text">Player X Wins!</h1>
+        <button id="restart-btn" class="neon-btn">Play Again</button>
+        <button id="win-exit-btn" class="outline-btn mt-4">Main Menu</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
